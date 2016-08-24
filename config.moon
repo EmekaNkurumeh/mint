@@ -6,6 +6,9 @@ export G = {
   font: juno.Font.fromEmbedded 16
   gravity: 1.5
   friction: 4
+  background: {}
+  foreground: {}
+  solid: {}
   lib: {
    lume: require "lib.lume"
    coil: require "lib.coil"
