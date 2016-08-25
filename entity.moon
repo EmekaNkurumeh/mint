@@ -8,9 +8,9 @@ class entity
       @yvel = 0
     @canvas = juno.Buffer.fromBlank @w,@h
   update: (dt) =>
-    G.lib.coil.update dt
-    G.lib.tick.update dt
-    G.lib.flux.update dt
+    G.coil.update dt
+    G.tick.update dt
+    G.flux.update dt
     if not @static
       @x = (@x + @xvel)
       @y = (@y + @yvel) + G.gravity
@@ -18,7 +18,7 @@ class entity
       @yvel = @yvel * (1 - math.min(dt*G.friction, 1))
       if @x > G.width-@w then @x = G.width-@w elseif @x <= 0 then @x = 0
       if @y > G.height-@h then
-        @y = G.height-@h 
+        @y = G.height-@h
       elseif @y <= 0 then
         @y = 0
         @yvel = 0
@@ -55,6 +55,11 @@ class npc extends entity
   draw: () =>
     super!
   talk: (str = "Hello I'm #{@name}") =>
-    print "[#{@name}]:#{str}"
+    G.coil.add( ->
+      for i=1,#"#{str}"
+        c = str\sub i,i
+        print c
+        G.coil.wait 0.35
+    )
 
 {:entity,:player,:npc}

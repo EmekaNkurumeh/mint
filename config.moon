@@ -5,16 +5,14 @@ export G = {
   scale: 4
   font: juno.Font.fromEmbedded 16
   gravity: 1.5
-  friction: 4
+  friction: 7
   background: {}
   foreground: {}
   solid: {}
-  lib: {
-   lume: require "lib.lume"
-   coil: require "lib.coil"
-   flux: require "lib.flux"
-   tick: require "lib.tick"
-  }
+  lume: require "lib.lume"
+  coil: require "lib.coil"
+  flux: require "lib.flux"
+  tick: require "lib.tick"
 }
 {
   title: G.title

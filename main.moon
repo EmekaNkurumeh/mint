@@ -27,4 +27,5 @@ juno.onDraw = () ->
   return 0
 
 juno.onKeyDown = (k) ->
+  if k == "escape" then os.exit!
   G.foreground[1]\key k
