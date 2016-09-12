@@ -13,6 +13,8 @@ export G = {
   coil: require "lib.coil"
   flux: require "lib.flux"
   tick: require "lib.tick"
+  bump: require "lib.bump"
+  vec2: require "lib.vec2"
 }
 {
   title: G.title
