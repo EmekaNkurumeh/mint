@@ -1,7 +1,7 @@
 export G = {
   title:"mint"
-  width: 128
-  height: 128
+  width: 256
+  height: 256
   scale: 4
   font: juno.Font.fromEmbedded 16
   gravity: 1.5
