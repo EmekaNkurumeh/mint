@@ -1,0 +1,2 @@
+.gitignore
+!mtl = |> moonc %f |> %B.lua

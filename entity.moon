@@ -1,6 +1,7 @@
 class entity
   new: (@name,@screen,@pos,@w,@h,@static) =>
-    @pos *= G.scale
+    @pos.x *= G.scale
+    @pos.y *= G.scale
     if not @static
       @speed = 15
       @xvel = 0
