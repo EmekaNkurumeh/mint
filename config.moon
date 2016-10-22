@@ -14,7 +14,8 @@ export G = {
   flux: require "lib.flux"
   tick: require "lib.tick"
   bump: require "lib.bump"
-  vec2: require "lib.vec2"
+  unpack: table.unpack
+  pack: (...) -> {...}
 }
 {
   title: G.title

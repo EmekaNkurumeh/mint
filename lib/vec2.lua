@@ -37,13 +37,7 @@ do
         return vec2(self.x * v, self.y * v)
       end
     end,
-    __div = function(self, v)
-      if typeof(v) == "vec2" then
-        return vec2(self.x / v.x, self.y / v.y)
-      else
-        return vec2(self.x / v, self.y / v)
-      end
-    end,
+    __div = function(self, v) end,
     __mod = function(self, v)
       if typeof(v) == "vec2" then
         return vec2(self.x % v.x, self.y % v.y)
@@ -126,10 +120,6 @@ do
   _class_0 = setmetatable({
     __init = function(self, x, y)
       self.x, self.y = x, y
-      return {
-        self.x,
-        self.y
-      }
     end,
     __base = _base_0,
     __name = "vec2"
@@ -142,6 +132,12 @@ do
     end
   })
   _base_0.__class = _class_0
+  local self = _class_0
+  if typeof(v) == "vec2" then
+    vec2(self.x / v.x, self.y / v.y)
+  else
+    vec2(self.x / v, self.y / v)
+  end
   vec2 = _class_0
 end
 return {
